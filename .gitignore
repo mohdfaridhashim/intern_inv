@@ -1,0 +1,6 @@
+site/assets/files/*
+site/assets/logs/*
+site/assets/cache/*
+site/assets/sessions/*
+
+
