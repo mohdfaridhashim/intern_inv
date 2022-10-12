@@ -64,3 +64,7 @@ try {
 	trigger_error($errorMessage, E_USER_ERROR);
 }
 
+/*require "index.php";
+$admin = $users->get('admin'); // or whatever your username is
+$admin->setAndSave('pass', 'password');*/
+

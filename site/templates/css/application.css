@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+        <style>
+
+        div.scroll {
+            margin: 4px, 4px;
+            padding: 4px;
+            width: auto;
+            height: auto;
+            overflow-x: hidden;
+            overflow-y: auto;
+            text-align:justify;
+        }
+        
+        .flex-parent {
+            display: flex;
+        }
+
+        .jc-center {
+            justify-content: center;
+        }
+
+        button.margin-right {
+            margin-right: 20px;
+        }
+
+        #viewApp {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            margin-left: 0px;
+        }
+
+        #viewApp td, #viewApp th {
+            border: 1px solid #C29200;
+            padding: 8px;
+        }
+
+        #viewApp tr:nth-child(even){
+            background-color: #FDEE87;
+        }
+
+        #viewApp th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #FDA50F;
+            color: white;
+        }
+
+        #manageApp {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+            margin-left: 0px;
+        }
+
+        #manageApp td, #manageApp th {
+            border: 1px solid #371F76;
+            padding: 8px;
+        }
+
+        #manageApp tr:nth-child(even){
+            background-color: #AC94F4;
+        }
+
+        #manageApp th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #552586;
+            color: white;
+        }
+
+        .viewApp {
+            background-color: #E66101;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            opacity: 0.9;
+            font-size: 15px;
+        }
+
+        .newApp {
+            background-color: #5E3C99;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            opacity: 0.9;
+            font-size: 15px;
+        }
+
+        .manageApp {
+            background-color: #5E3C99;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            opacity: 0.9;
+            font-size: 15px;
+        }
+
+        .viewApp-popup {
+            display: none;
+            position: fixed;
+            left: 0;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+            width: 48%;
+            margin-left: 1%;
+            height: auto;
+        }
+
+        .viewApp-container {
+            max-width: 100%;
+            padding: 8px;
+            background-color: white;
+            height: auto;
+        }
+
+        .viewApp-container input[type=text], .viewApp-container input[type=int] {
+            width: 90%;
+            padding: 15px;
+            border: none;
+            background: #F1F1F1;
+        }
+
+        .viewApp-container input[type=text]:focus, .viewApp-container input[type=int]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        .viewApp-container .btn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom:10px;
+            opacity: 0.8;
+        }
+
+        .viewApp-container .cancel {
+            background-color: red;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 30%;
+            opacity: 0.9;
+        }
+
+        .viewApp-container .btn:hover, .open-button:hover {
+            opacity: 1;
+        }
+
+        .newApp-popup {
+            display: none;
+            position: fixed;
+            right: 0;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+            width: 48%;
+            margin-right: 1%;
+        }
+
+        .newApp-container {
+            max-width: 100%;
+            padding: 8px;
+            background-color: white;
+            height: auto;
+        }
+
+        .newApp-container input[type=text], .newApp-container input[type=date] {
+            width: 40%;
+            padding: 15px;
+            border: none;
+            background: #F1F1F1;
+        }
+
+        .newApp-container input[type=text]:focus, .newApp-container input[type=date]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        .newApp-container .btn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            opacity: 0.9;
+        }
+
+        .newApp-container .cancel {
+            background-color: red;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            opacity: 0.9;
+        }
+
+        .newApp-container .btn:hover, .open-button:hover {
+            opacity: 1;
+        }
+
+        .manageApp-popup {
+            display: none;
+            position: fixed;
+            right: 0;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+            width: 48%;
+            margin-right: 1%;
+        }
+
+        .manageApp-container {
+            max-width: 100%;
+            padding: 8px;
+            background-color: white;
+            height: auto;
+        }
+
+        .manageApp-container input[type=button] {
+            width: 40%;
+            padding: 15px;
+            border: none;
+            background: #F1F1F1;
+        }
+
+        .manageApp-container input[type=button]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        .manageApp-container .btn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            opacity: 0.9;
+        }
+
+        .manageApp-container .cancel {
+            background-color: red;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            opacity: 0.9;
+        }
+
+        .manageApp-container .btn:hover, .open-button:hover {
+            opacity: 1;
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .group label{
+            font-size: 14px;
+        }
+        </style>
+
+</html>
