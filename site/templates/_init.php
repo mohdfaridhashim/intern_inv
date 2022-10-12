@@ -1,4 +1,4 @@
-<?php namespace ProcessWire;
+<?php namespace intern_inv;
 
 // Optional initialization file, called before rendering any template file.
 // This is defined by $config->prependTemplateFile in /site/config.php.
